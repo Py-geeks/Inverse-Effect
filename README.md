@@ -1,5 +1,7 @@
 # Inverse-Effect
-Grayscale filter is a widely used and popular filter used by youngsters. Lets try making a filter of our own through Image Processing.
+Inverting an image or **Negative transformation** of an image is a very basic method of image processing <br>
+in which the brightest areas are transformed into the darkest and the darkest areas are transformed into the brightest.<br>
+This conversion or transformation is used widly in the field of image processing.<br> 
 
 ## Tools and Languages:
 <img align="left" alt="OpenCV" width="26px" src="opencv.png" >
@@ -18,7 +20,7 @@ pip install numpy
 ```
 
 ## Import
-
+Use [import](https://www.w3schools.com/python/ref_keyword_import.asp) keyword to import modules.
 ```python
 import cv2
 import numpy as np
@@ -31,23 +33,24 @@ img = cv2.imread("cat.png")
 ```
 
 
-## Gray scale
-
+## Negative conversion
+Image negative is produced by subtracting each pixel from the maximum intensity value.<br>
+This is a very easy method rather than manipulating individual color channels.<br> 
 ```python
-gray = cv2.cvtColor(img , cv2.COLOR_BGR2GRAY)
+inv = 255-img
 ```
 
 ## Completion message
 
 ```python
-print('Image Grayscaled.')
+print('Negative Image created.')
 ```
 
 ## Comparing original vs grayscale
 
 ```python
 cv2.imshow('ORIGINAL',img)
-cv2.imshow('GRAYSCALE',gray)
+cv2.imshow('INVERSE',inv)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
@@ -55,7 +58,7 @@ cv2.destroyAllWindows()
 ## Images
 <p align="center">
 	<img src="cat.png" alt="Logo", height=250px,width=350px>
-	<img src="Converted-Gray.PNG" alt="Gray", height=250px,width=350px>
+	<img src="inversecat.PNG" alt="Gray", height=250px,width=350px>
 </p>
 
 ### Developed by
